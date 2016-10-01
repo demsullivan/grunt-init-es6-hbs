@@ -23,11 +23,13 @@ exports.template = function(grunt, init, done) {
     init.copyAndProcess(files, props);
 
     init.writePackageJSON('package.json', {
-      name: 'es6-hbs-app',
-      version: '0.0.0-ignored',
+      name: props.name,
+      version: props.version,
       devDependencies: {
         'babel-plugin-transform-es2015-modules-amd': '^6.8.0',
+        'babel-preset-es2015': '^6.14.0',
         'babelify': '^7.3.0',
+        'grunt': '^1.0.1',
         'grunt-bower-concat': '^1.0.0',
         'grunt-browserify': '^5.0.0',
         'grunt-contrib-clean': '^1.0.0',
@@ -43,8 +45,8 @@ exports.template = function(grunt, init, done) {
     });
 
     init.writePackageJSON('bower.json', {
-      name: 'es6-hbs-app',
-      version: '0.0.0-ignored'
+      name: props.name,
+      version: props.version
     });
 
     done();
